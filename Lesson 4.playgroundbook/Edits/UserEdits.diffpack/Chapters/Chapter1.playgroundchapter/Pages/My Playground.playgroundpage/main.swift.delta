@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import Foundation
+
+class Car {
+    enum dvigStatus{
+        case on, off
+    }
+    enum windStatus{
+        case on, off
+    }
+    let color: String
+    let brand: String
+    let numbersDoors: Int
+    let numbersPeople: Int
+    var dvStatus: dvigStatus
+    var wStatus: windStatus
+    
+    init(color:String, brand:String, numbersDoors:Int, numbersPeople:Int, dvStatus:dvigStatus,wStatus:windStatus){ 
+    
+    self.color = color
+    self.brand = brand
+    self.numbersDoors = numbersDoors
+    self.numbersPeople = numbersPeople
+    self.dvStatus = dvStatus
+    self.wStatus = wStatus
+    }
+    
+    func onwind(){
+        wStatus = .on
+        print("Закройте окно.")
+    }
+    func offwind(){
+        wStatus = .off
+    }
+    func onengine(){
+        dvStatus = .on
+        print("Двигатель запущен.")
+    }
+    func offengine(){
+        dvStatus = .off
+    }
+}
+
+class NewCar: Car{
+    var mp3: String
+    init(mp3:String, color: String, brand: String, numbersDoors: Int, numbersPeople: Int, dvStatus: Car.dvigStatus, wStatus: Car.windStatus) {
+        self.mp3 = mp3
+        super.init(color: color, brand: brand, numbersDoors: numbersDoors, numbersPeople: numbersPeople, dvStatus: dvStatus, wStatus: wStatus)
+    }
+    
+    override func onengine() {
+        print("Двигатель включен!")
+    }
+    
+    
+}
+
+class TruckCar: Car{
+    var wheels: Int
+    var height: Int
+    init(wheels:Int, height:Int, color: String, brand: String, numbersDoors: Int, numbersPeople: Int, dvStatus: Car.dvigStatus, wStatus: Car.windStatus) {
+        self.wheels = wheels
+        self.height = height
+        super.init(color: color, brand: brand, numbersDoors: numbersDoors, numbersPeople: numbersPeople, dvStatus: dvStatus, wStatus: wStatus)
+    }
+    
+}
+
+var car = Car(color: "Black", brand: "Audi", numbersDoors: 2, numbersPeople: 1, dvStatus: .on, wStatus: .off)
+print("Цвет машины:", car.color)
+print("Марка машины:", car.brand)
+print("Количество мест:", car.numbersDoors)
+print("Количество людей:", car.numbersPeople)
+car.onengine()
+car.onwind()
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 2036}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>
